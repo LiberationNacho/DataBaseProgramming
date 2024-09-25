@@ -19,4 +19,4 @@ rl.question('첫번쨰 값: ', (num1)=>{
 */
 const argv = process.argv;
 sum += parseInt(argv[1]);
-console.log("두 수의 합은 "+argv[1] + argv[2]);
+console.log("두 수의 합은 "+ argv[1] + argv[2]);
