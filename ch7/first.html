@@ -1,0 +1,41 @@
+<html>
+    <head></head>
+    <body>
+        <!--
+        <input type="button" value="버튼" onclick="alert('버튼클릭')">
+        -->
+
+        <input type="button" id="btnClk" value = '버튼'>
+        <div id = 'result'></div>
+        <script>
+            /*
+            function msg(event)
+            {
+                alert(event.type);
+                alert("x좌표: " + event.clientX);
+                alert("y좌표: " + event.clientY);
+                
+            }
+            btnClk.addEventListener('click', msg);
+            */
+           class Mouse
+           {
+                handleEvent(event)
+                {
+                    switch(event.type)
+                    {
+                        case 'mousedown':
+                            result.innerHtml = "마우스 버튼 누름";
+                            break;
+
+                        case 'mouseup':
+                            result.innerHtml = "마우스 버튼 놓음";
+                            break;
+                    }
+                }
+            }
+            let mouse = new Mouse();
+            btnClk.addEventListener('mousedown', mouse);
+            btnClk.addEventListener('mouseup', mouse);
+        </script>
+    </body>
