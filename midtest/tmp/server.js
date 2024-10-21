@@ -8,8 +8,9 @@ var conn = mySql.createConnection({
     host: "localhost",
     user: "root",
     password: "man06066!!",
-    database: "myboard"
+    database: "myboard" // myboard로 이름 지으면 감점, 꼭 특정 DB이름으로 만들기
 });
+conn.connect();
 
 app.listen(8080, function(){
     console.log("포트 8080으로 서버 대기중 ... ")
@@ -22,7 +23,7 @@ app.get('/', function(req, res){
     const {title, writter} = req.query; // get, URL의 변수를 받는 것, 띄어쓰기는 하면 안됨
     // res.send(title + " " + writter);
 
-    var query1 = `select * from post where title =  ${title}`; // 꼭 tab위에 키 쓰기 ,URL에 ""가 있어야 함
+    var query1 = `select * from post where title =  '${title}'`; // 꼭 tab위에 키 쓰기
 
     conn.query(query1, (err, rows, fields) =>
     {
