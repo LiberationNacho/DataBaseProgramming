@@ -33,7 +33,5 @@ app.get('/', function(req, res){
 
     // index.html 실행
     // res.sendFile(__dirname + '/index.html');
-
-
 })
 
